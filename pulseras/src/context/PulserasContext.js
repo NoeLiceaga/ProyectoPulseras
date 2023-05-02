@@ -1,6 +1,8 @@
 "use client"
 import { useContext, createContext, useState } from "react";
 
+import pareja_ojo_turco from "../images/pulseras/pareja-ojo-turco.jpeg"
+
 export const PulserasContext = createContext();
 
 export const usePulseras = () => {
@@ -11,13 +13,18 @@ export const usePulseras = () => {
 
 export const PulserasProvider = ({ children }) => {
   const [pulseras, setPulseras] = useState([
-
     {
-      nombre: "ALUMINIOS",
-      icono: "x",
-      descripcion: "Compra de Aluminio Tipos: Serie 5000, 380, 6063, macizo, delgado, 1100, perfil, bote, cable y litografía.",
-      imagenes:"x"
+      nombre: "PAREJA OJO TURCO",
+      foto: pareja_ojo_turco,
+      descripcion:"Pulseras para pareja con accesorio de ojo turco",
+      precio: 50
     },
+    {
+        nombre: "PAREJA OJO TURCO",
+        foto: pareja_ojo_turco,
+        descripcion:"Pulseras para pareja con accesorio de ojo turco",
+        precio: 50
+      }
   ]);
   return (
     <PulserasContext.Provider
