@@ -80,8 +80,8 @@ const AccesoriosLista = ({id}) => {
       </div>
       <div className="color-buttons w-[100%] flex flex-wrap justify-center m-1 hidden" id={id}>
         {accesorios.map((accesorio) => (
-            <div className="w-28 flex flex-wrap justify-center align-middle m-1 border-2 p-3 text-center rounded-md" >
-                <Image src={accesorio.icono} className=""/>
+            <div className="w-28 flex flex-wrap justify-center align-middle m-1 border-2 p-3 text-center rounded-md" key={accesorio.id}>
+                <Image src={accesorio.icono} className="" alt="imagen"/>
                 <h1 className="mx-2 w-[100%] text-center">{accesorio.nombre}</h1>
             </div>
         ))}

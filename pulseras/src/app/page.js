@@ -3,6 +3,7 @@ import Image from 'next/image'
 import IconoConTexto from '@/components/IconoConTexto'
 import { Modelo } from '@/components/Modelo'
 import { usePulseras } from '@/context/PulserasContext'
+import AccesoriosLista from '@/components/AccesoriosLista'
 export default function Home() {
 
   const {pulseras} = usePulseras()
@@ -17,7 +18,7 @@ export default function Home() {
       md:justify-between'>
         {
           pulseras.map((pulsera)=>(
-            <Modelo pulsera={pulsera} id={pulsera.identificador}/>
+            <Modelo pulsera={pulsera} key={pulsera.id} />
           ))
         }
       </div>

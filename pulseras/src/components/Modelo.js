@@ -2,12 +2,12 @@ import React from 'react'
 import Image from 'next/image'
 import ColorPaletteMenu from './ColorPaletteMenu'
 import AccesoriosLista from './AccesoriosLista'
-export const Modelo = ({pulsera, id}) =>{
+export const Modelo = ({pulsera}) =>{
   return (
     <div className='w-[100%] flex flex-wrap justify-center align-middle border-4 m-12 rounded-md shadow-lg shadow-[#cfb7f1] border-[#cfb7f1] 
     md:w-1/4 md:m-6'>
         <div className='w-[100%] justify-center align-middle flex m-5'>
-            <Image src={pulsera.foto} className='w-3/5'/>
+            <Image src={pulsera.foto} className='w-3/5' alt='imagen'/>
         </div>
         <div className='w-[100%] text-center text-2xl font-bold mx-6'>
             <h1>{pulsera.nombre}</h1>
@@ -16,10 +16,10 @@ export const Modelo = ({pulsera, id}) =>{
             <p>{pulsera.descripcion}</p>
         </div>
         <div className='w-[100%]'>
-            <ColorPaletteMenu id={id+"pallette"}/>
+            <ColorPaletteMenu id={pulsera.identificador} key={pulsera.id}/>
         </div>
         <div className='w-[100%]'>
-            <AccesoriosLista id={id+"accesorio"} />
+            <AccesoriosLista id={pulsera.identificador} key={pulsera.id} />
         </div>
         <div className='w-[100%] flex justify-center align-middle text-white my-5 '>
             <button className='bg-pink-700 rounded-md px-6 py-3  animate-pulse'>
