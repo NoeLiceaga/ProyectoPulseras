@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import { useContext, createContext, useState } from "react";
-
-import pareja_ojo_turco from "../images/pulseras/pareja-ojo-turco.jpeg"
+import {v4 as uuid} from 'uuid'
+import pareja_ojo_turco from "../images/pulseras/pareja-ojo-turco.jpeg";
 
 export const PulserasContext = createContext();
 
@@ -14,17 +14,26 @@ export const usePulseras = () => {
 export const PulserasProvider = ({ children }) => {
   const [pulseras, setPulseras] = useState([
     {
+      identificador: uuid(),
+      nombre: "PAREJA OJO TURCO",
+      foto: pareja_ojo_turco,
+      descripcion: "Pulseras para pareja con accesorio de ojo turco",
+      precio: 50,
+    },
+    {
+      identificador: uuid(),
+      nombre: "PAREJA OJO TURCO",
+      foto: pareja_ojo_turco,
+      descripcion: "Pulseras para pareja con accesorio de ojo turco",
+      precio: 50,
+    },
+    {
+      identificador: uuid(),
       nombre: "PAREJA OJO TURCO",
       foto: pareja_ojo_turco,
       descripcion:"Pulseras para pareja con accesorio de ojo turco",
       precio: 50
-    },
-    {
-        nombre: "PAREJA OJO TURCO",
-        foto: pareja_ojo_turco,
-        descripcion:"Pulseras para pareja con accesorio de ojo turco",
-        precio: 50
-      }
+    }
   ]);
   return (
     <PulserasContext.Provider

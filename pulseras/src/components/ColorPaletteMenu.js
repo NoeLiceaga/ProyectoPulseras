@@ -5,12 +5,15 @@ import { useState } from "react";
 import mas from "../images/icon/bx-plus.svg";
 import menos from "../images/icon/bx-minus.svg";
 
-const ColorPaletteMenu = () => {
+const ColorPaletteMenu = ({id}) => {
+  console.log("llave-pallette ", id)
   const [masColores, setMasColores] = useState(false);
   const oculta = (valor) => {
     console.log(valor)
     setMasColores(valor)
-    let div = document.getElementById('paleta')
+    console.log("Valor clickeado id ", id)
+    let div = document.getElementById(id)
+    console.log(id)
     if(!valor){
         div.classList.add('hidden')
     }else{
@@ -43,7 +46,7 @@ const ColorPaletteMenu = () => {
           <Image src={mas} onClick={() => oculta(true)} className="animate-bounce"/>
         )}
       </div>
-      <div className="color-buttons w-[100%] flex flex-wrap justify-center m-1 hidden" id="paleta">
+      <div className="color-buttons w-[100%] flex flex-wrap justify-center m-1 hidden" id={id}>
         {colores.map((color) => (
           <button
             className="w-1/5 h-10 m-1 hover:animate-pulse"

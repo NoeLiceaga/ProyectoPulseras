@@ -14,12 +14,13 @@ import heart from "../images/icon/bxs-heart-circle.svg"
 import inifinite from "../images/icon/bx-infinite.svg"
 import cross from "../images/icon/bx-plus.svg"
 import circle from "../images/icon/bxs-circle.svg"
-const AccesoriosLista = () => {
+const AccesoriosLista = ({id}) => {
+  console.log("llave-accesorio ",id)
   const [masAccesorio, setMasAccesorio] = useState(false);
   const oculta = (valor) => {
     console.log(valor)
     setMasAccesorio(valor)
-    let div = document.getElementById('accesorio')
+    let div = document.getElementById(id)
     if(!valor){
         div.classList.add('hidden')
     }else{
@@ -77,7 +78,7 @@ const AccesoriosLista = () => {
           <Image src={mas} onClick={() => oculta(true)} className="animate-bounce"/>
         )}
       </div>
-      <div className="color-buttons w-[100%] flex flex-wrap justify-center m-1 hidden" id="accesorio">
+      <div className="color-buttons w-[100%] flex flex-wrap justify-center m-1 hidden" id={id}>
         {accesorios.map((accesorio) => (
             <div className="w-28 flex flex-wrap justify-center align-middle m-1 border-2 p-3 text-center rounded-md" >
                 <Image src={accesorio.icono} className=""/>
