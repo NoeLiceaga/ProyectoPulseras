@@ -18,11 +18,7 @@ export default function Home() {
       md:justify-between'>
         {
           pulseras.map((pulsera)=>(
-<<<<<<< HEAD
-            <Modelo pulsera={pulsera} key={pulsera.id} />
-=======
             <Modelo pulsera={pulsera} id={pulsera.identificador}/>
->>>>>>> 9ee369d441bbabe2549e58b1708748190b6f0cbf
           ))
         }
       </div>
