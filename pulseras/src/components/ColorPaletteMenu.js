@@ -1,25 +1,40 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect,useRef  } from "react";
 import mas from "../images/icon/bx-plus.svg";
 import menos from "../images/icon/bx-minus.svg";
 
-const ColorPaletteMenu = ({id}) => {
-  console.log("llave-pallette ", id)
+const ColorPaletteMenu = ({ identificador }) => {
   const [masColores, setMasColores] = useState(false);
-  const oculta = (valor) => {
-    console.log(valor)
-    setMasColores(valor)
-    console.log("Valor clickeado id ", id)
-    let div = document.getElementById(id)
-    console.log(id)
-    if(!valor){
-        div.classList.add('hidden')
-    }else{
-        div.classList.remove('hidden')
+  const divRef = useRef(null);
+
+  useEffect(() => {
+    // El código dentro de este bloque se ejecuta después del renderizado del componente
+    let div = document.getElementById(identificador);
+    console.log(div)
+    if (divRef.current) {
+      if (!masColores) {
+        divRef.current.classList.add("hidden");
+      } else {
+        divRef.current.classList.remove("hidden");
+      }
     }
-  }
+  }, [masColores, divRef]);
+  console.log("llave-pallette ", identificador);
+  const oculta = (valor) => {
+    console.log(valor);
+    setMasColores(valor);
+    // console.log("Valor clickeado id ", identificador);
+    // let div = document.getElementById(identificador);
+    // console.log(div);
+    // console.log(identificador);
+    // if (!valor) {
+    //   div.classList.add("hidden");
+    // } else {
+    //   div.classList.remove("hidden");
+    // }
+  };
   const colores = [
     "#ff7987",
     "#40CFFF",
@@ -41,12 +56,24 @@ const ColorPaletteMenu = ({id}) => {
       <div className="flex p-2 justify-evenly">
         <h2 className="mx-4">Paleta de Colores</h2>
         {masColores ? (
-          <Image src={menos} onClick={() => oculta(false)} className="animate-bounce"/>
+          <Image
+            src={menos}
+            onClick={() => oculta(false)}
+            className="animate-bounce"
+          />
         ) : (
-          <Image src={mas} onClick={() => oculta(true)} className="animate-bounce"/>
+          <Image
+            src={mas}
+            onClick={() => oculta(true)}
+            className="animate-bounce"
+          />
         )}
       </div>
-      <div className="color-buttons w-[100%] flex flex-wrap justify-center m-1 hidden" id={id}>
+      <div
+        className="color-buttons w-[100%] flex flex-wrap justify-center m-1 hidden"
+        id={identificador}
+        ref={divRef}
+      >
         {colores.map((color) => (
           <button
             className="w-1/5 h-10 m-1 hover:animate-pulse"

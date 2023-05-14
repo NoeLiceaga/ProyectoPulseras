@@ -10,25 +10,31 @@ export const usePulseras = () => {
   if (!context) throw Error("usePulseras must used within a provider");
   return context;
 };
+export function generarUUID() {
+  return uuid().replace(/-/g, '');
+}
 
 export const PulserasProvider = ({ children }) => {
   const [pulseras, setPulseras] = useState([
     {
-      identificador: uuid(),
+      idAccesorio: generarUUID(),
+      idColor: generarUUID(),
       nombre: "PAREJA OJO TURCO",
       foto: pareja_ojo_turco,
       descripcion: "Pulseras para pareja con accesorio de ojo turco",
       precio: 50,
     },
     {
-      identificador: uuid(),
+      idAccesorio: generarUUID(),
+      idColor: generarUUID(),
       nombre: "PAREJA OJO TURCO",
       foto: pareja_ojo_turco,
       descripcion: "Pulseras para pareja con accesorio de ojo turco",
       precio: 50,
     },
     {
-      identificador: uuid(),
+      idAccesorio: generarUUID(),
+      idColor: generarUUID(),
       nombre: "PAREJA OJO TURCO",
       foto: pareja_ojo_turco,
       descripcion:"Pulseras para pareja con accesorio de ojo turco",

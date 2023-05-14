@@ -18,7 +18,7 @@ export default function Home() {
       md:justify-between'>
         {
           pulseras.map((pulsera)=>(
-            <Modelo pulsera={pulsera} id={pulsera.identificador}/>
+            <Modelo pulsera={pulsera} idA={pulsera.idAccesorio} idC={pulsera.idColor}/>
           ))
         }
       </div>
