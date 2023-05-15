@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import mas from "../images/icon/bx-plus.svg";
 import menos from "../images/icon/bx-minus.svg";
 
@@ -15,17 +15,24 @@ import inifinite from "../images/icon/bx-infinite.svg"
 import cross from "../images/icon/bx-plus.svg"
 import circle from "../images/icon/bxs-circle.svg"
 const AccesoriosLista = ({identificador}) => {
-  console.log("llave-accesorio ",identificador)
   const [masAccesorio, setMasAccesorio] = useState(false);
+  const divRef = useRef(null);
+
+  useEffect(() => {
+    // El código dentro de este bloque se ejecuta después del renderizado del componente
+    let div = document.getElementById(identificador);
+    console.log(div)
+    if (divRef.current) {
+      if (!masAccesorio) {
+        divRef.current.classList.add("hidden");
+      } else {
+        divRef.current.classList.remove("hidden");
+      }
+    }
+  }, [masAccesorio, divRef]);
   const oculta = (valor) => {
     console.log(valor)
     setMasAccesorio(valor)
-    let div = document.getElementById(identificador)
-    if(!valor){
-        div.classList.add('hidden')
-    }else{
-        div.classList.remove('hidden')
-    }
   }
   const accesorios = [
     {
@@ -78,11 +85,13 @@ const AccesoriosLista = ({identificador}) => {
           <Image src={mas} onClick={() => oculta(true)} className="animate-bounce"/>
         )}
       </div>
-      <div className="color-buttons w-[100%] flex flex-wrap justify-center m-1 hidden" id={identificador}>
+      <div className="color-buttons w-[100%] flex flex-wrap justify-center m-1 hidden" id={identificador} ref={divRef}>
         {accesorios.map((accesorio) => (
-            <div className="w-28 flex flex-wrap justify-center align-middle m-1 border-2 p-3 text-center rounded-md" key={accesorio.id}>
-                <Image src={accesorio.icono} className="" alt="imagen"/>
-                <h1 className="mx-2 w-[100%] text-center">{accesorio.nombre}</h1>
+            <div className="w-28 flex flex-wrap justify-center align-middle m-1 border-2 p-3 text-center rounded-md
+            md:flex md:w-1/3 md:flex-wrap md:justify-start md:m-0" 
+            key={accesorio.id}>
+                <Image src={accesorio.icono} className="md:flex" alt="imagen"/>
+                <h1 className="mx-2 w-[100%] text-center md:flex md:w-1/3">{accesorio.nombre}</h1>
             </div>
         ))}
       </div>
