@@ -1,6 +1,6 @@
 "use client";
 import { useContext, createContext, useState } from "react";
-import {v4 as uuid} from 'uuid'
+import { v4 as uuid } from "uuid";
 import pareja_ojo_turco from "../images/pulseras/pareja-ojo-turco.jpeg";
 
 export const PulserasContext = createContext();
@@ -11,7 +11,7 @@ export const usePulseras = () => {
   return context;
 };
 export function generarUUID() {
-  return uuid().replace(/-/g, '');
+  return uuid().replace(/-/g, "");
 }
 
 export const PulserasProvider = ({ children }) => {
@@ -37,14 +37,29 @@ export const PulserasProvider = ({ children }) => {
       idColor: generarUUID(),
       nombre: "PAREJA OJO TURCO",
       foto: pareja_ojo_turco,
-      descripcion:"Pulseras para pareja con accesorio de ojo turco",
-      precio: 50
-    }
+      descripcion: "Pulseras para pareja con accesorio de ojo turco",
+      precio: 50,
+    },
   ]);
+
+  const createPulsera = (nombre, descripcion, precio) => {
+    setPulseras([
+      ...pulseras,
+      {
+        idAccesorio: generarUUID(),
+        idColor: generarUUID(),
+        nombre,
+        foto: pareja_ojo_turco,
+        descripcion,
+        precio,
+      },
+    ]);
+  };
   return (
     <PulserasContext.Provider
       value={{
         pulseras,
+        createPulsera
       }}
     >
       {children}

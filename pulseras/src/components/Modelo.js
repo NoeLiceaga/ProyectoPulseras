@@ -12,11 +12,11 @@ export const Modelo = ({ pulsera, idA, idC }) => {
       <div className="w-[100%] justify-center align-middle flex m-5 md:hidden">
         <Image src={pulsera.foto} className="w-3/5" alt="imagen" />
       </div>
-      <div className="w-[100%] text-center text-2xl font-bold mx-6 md:hidden">
+      <div className="w-[100%] text-center text-2xl font-bold mx-6 md:hidden md:text-3xl">
         <h1>{pulsera.nombre}</h1>
       </div>
-      <div className="w-[100%] text-center font-thin mx-6 my-6 md:hidden">
-        <p>{pulsera.descripcion}</p>
+      <div className="w-[100%] text-center font-thin mx-6 my-6 md:hidden md:text-2xl">
+        <p className="">{pulsera.descripcion}</p>
       </div>
       <div className="md:hidden">
         <div className="w-[100%]">
@@ -39,10 +39,10 @@ export const Modelo = ({ pulsera, idA, idC }) => {
         </div>
         <div className="w-1/3 flex flex-wrap justify-center align-middle p-10">
           <div className="w-[100%] text-center text-2xl font-bold mx-6 flex justify-center align-middle">
-            <h1 className="flex">{pulsera.nombre}</h1>
+            <h1 className="flex justify-center align-middle md:text-5xl">{pulsera.nombre}</h1>
           </div>
           <div className="w-[100%] text-center font-thin mx-6 my-6">
-            <p>{pulsera.descripcion}</p>
+            <p className="md:text-2xl">{pulsera.descripcion}</p>
           </div>
         </div>
         <div className="hidden md:flex md:flex-wrap md:py-16 w-1/3">

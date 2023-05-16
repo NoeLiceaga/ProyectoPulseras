@@ -69,13 +69,20 @@ export default function NavBar() {
                 <Link href={"/"}>Inicio</Link>
               </li>
               <li className="font-thin text-base text-white hover:text-[#bb9bf0] md:text-white md:font-bold md:text-xl md:hover:text-black">
-                <Link href={"/"}>Pedido Especial</Link>
+                <Link href={"/especial"}>Pedido Especial</Link>
               </li>
               <li className="font-thin text-base text-white hover:text-[#bb9bf0] md:text-white md:font-bold md:text-xl md:hover:text-black">
                 <Link href={"/"}>Galeria</Link>
               </li>
               <li className="font-thin text-base text-white hover:text-[#bb9bf0] md:text-white md:font-bold md:text-xl  md:hover:text-black">
-                <Link href={"/contacto"} className="text-white">Contacto</Link>
+                <Link href={"/contacto"} className="text-white">
+                  Contacto
+                </Link>
+              </li>
+              <li className="font-thin text-base text-white hover:text-[#bb9bf0] md:text-white md:font-bold md:text-xl  md:hover:text-black">
+                <Link href={"/nuevo"} className="text-white">
+                  Nuevo Producto
+                </Link>
               </li>
             </ul>
           </div>

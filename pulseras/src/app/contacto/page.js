@@ -68,7 +68,7 @@ function page() {
     <div className="flex flex-wrap">
       <div
         className="w-[100%] text-center flex justify-center align-middle mt-10 font-bold text-md border-b-4 text-xl border-[#bb9bf0] p-5 text-black 
-    md:text-4xl md:mt-20 md:mx-16"
+        md:text-4xl md:mt-20 md:mx-16"
       >
         <h1>CONTACTAME</h1>
       </div>
