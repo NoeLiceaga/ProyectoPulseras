@@ -1,5 +1,5 @@
 "use client";
-import { useContext, createContext, useState } from "react";
+import { useContext, createContext, useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import pareja_ojo_turco from "../images/pulseras/pareja-ojo-turco.jpeg";
 
@@ -41,6 +41,9 @@ export const PulserasProvider = ({ children }) => {
       precio: 50,
     },
   ]);
+  useEffect(() => {
+    localStorage.setItem("pulseras", JSON.stringify(pulseras));
+  }, [pulseras]);
 
   const createPulsera = (nombre, descripcion, precio) => {
     setPulseras([
@@ -59,7 +62,7 @@ export const PulserasProvider = ({ children }) => {
     <PulserasContext.Provider
       value={{
         pulseras,
-        createPulsera
+        createPulsera,
       }}
     >
       {children}
