@@ -7,13 +7,13 @@ import facebook from "../images/facebook.png";
 import instagram from "../images/instagram.jpg";
 import whats from "../images/whats.png";
 import { Card } from "react-bootstrap";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 export default function Home() {
   const { pulseras } = usePulseras();
+
   console.log(pulseras);
-  useEffect(() => {
-  }, []);
   return (
     <div className="flexflex-wrap w-[100%]">
       <IconoConTexto />
@@ -38,7 +38,7 @@ export default function Home() {
         <h1>MIS REDES SOCIALES</h1>
       </div>
 
-      <div className="rounded-md border-2 border-sky-600 p-4 flex flex-wrap justify-center md:m-20 md:flex md:flex-nowrap md:border-4 md:rounded-lg shadow-xl">
+      <div className="m-5 rounded-md border-2 border-sky-600 p-4 flex flex-wrap justify-center md:m-20 md:flex md:flex-nowrap md:border-4 md:rounded-lg shadow-xl">
         <div className="w-1/3 md:p-14 md:w-1/4">
           <Image src={facebook} />
         </div>
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="rounded-md border-2 border-pink-500 p-4 flex flex-wrap justify-center md:m-20 md:flex md:flex-nowrap md:border-4 md:rounded-lg shadow-xl">
+      <div className="m-5 rounded-md border-2 border-pink-500 p-4 flex flex-wrap justify-center md:m-20 md:flex md:flex-nowrap md:border-4 md:rounded-lg shadow-xl">
         <div className="w-1/3 md:p-14 md:w-1/4">
           <Image src={instagram} />
         </div>
@@ -76,7 +76,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="rounded-md border-2 border-green-500 p-4 flex flex-wrap justify-center md:m-20 md:flex md:flex-nowrap md:border-4 md:rounded-lg shadow-xl">
+      <div className="m-5 rounded-md border-2 border-green-500 p-4 flex flex-wrap justify-center md:m-20 md:flex md:flex-nowrap md:border-4 md:rounded-lg shadow-xl">
         <div className="w-1/3 md:p-14 md:w-1/4">
           <Image src={whats} />
         </div>
