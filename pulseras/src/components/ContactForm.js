@@ -106,8 +106,7 @@ export const ContactForm = ({ pulseraSelecta}) => {
   };
 
   if (state.succeeded) {
-    return
-      <h1 className="text-2xl text-center">TU CORREO SE HA ENVIADO CON EXITO</h1>;
+    return <h1 className="text-2xl text-center">TU CORREO SE HA ENVIADO CON EXITO</h1>;
   }
   return (
     <Form

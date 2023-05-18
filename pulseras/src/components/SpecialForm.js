@@ -21,6 +21,7 @@ export function SpecialForm() {
         className="border-2 w-[100%] p-2 mb-3"
         value={null}
         id="name"
+        required
       />
     </FormGroup>
     <FormGroup>
