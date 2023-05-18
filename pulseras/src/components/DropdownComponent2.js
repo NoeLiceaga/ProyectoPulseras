@@ -50,6 +50,7 @@ import {
           value={valueColor}
           defaultValue={valueColor}
           onChange={funcionCambio(valueColor)}
+          required
         />
       </Form.Group>
     );

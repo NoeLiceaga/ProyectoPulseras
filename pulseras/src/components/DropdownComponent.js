@@ -69,6 +69,7 @@ export const DropdownComponent = ({funcionCambio}) => {
         value={valueAccesorio}
         defaultValue={valueAccesorio}
         onChange={funcionCambio(valueAccesorio)}
+        required
       />
     </Form.Group>
   );

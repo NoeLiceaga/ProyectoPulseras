@@ -42,6 +42,7 @@ import {
           value={valuePulsera}
           defaultValue={valuePulsera}
           onChange={funcionCambio(valuePulsera)}
+          required
         />
       </Form.Group>
     );
