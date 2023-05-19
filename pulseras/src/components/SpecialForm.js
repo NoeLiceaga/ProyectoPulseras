@@ -1,10 +1,13 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { Form, FormControl, FormGroup } from 'react-bootstrap';
+import Image from "next/image";
+import logoblanco from "../images/logoblanco.png"
 export function SpecialForm() {
   const [state, handleSubmit] = useForm("meqwdrlk");
   if (state.succeeded) {
-      return <p>Thanks for joining! Se ha mandado tu correo</p>;
+      return <div className="w-[100%] rounded-md bg-emerald-500 flex flex-wrap justify-center m-0 align-middle  md:p-10 md:m-5 md:h-1/2"><h1 className="md:my-0 md:p-0  md:text-2xl my-1 p-2 text-lg text-center text-white">TU CORREO SE HA ENVIADO CON EXITO</h1>
+      <div className="w-[70%] flex justify-center align-middle border-2 rounded-lg my-4 md:p-3 md:my-2"><Image src={logoblanco} height={200} width={200}/></div></div>;
   }
   return (
     <Form

@@ -13,6 +13,8 @@ import {
 import { DropdownComponent } from "./DropdownComponent";
 import { DropdownComponent2 } from "./DropdownComponent2";
 import { DropdownComponentPulsera } from "./DropdownComponentPulsera";
+import Image from "next/image";
+import logoblanco from "../images/logoblanco.png"
 export const ContactForm = ({ pulseraSelecta}) => {
   const [state, handleSubmit] = useForm("myyavpba");
   const [descripcion, setDescripcion] = useState("");
@@ -106,7 +108,9 @@ export const ContactForm = ({ pulseraSelecta}) => {
   };
 
   if (state.succeeded) {
-    return <h1 className="text-2xl text-center">TU CORREO SE HA ENVIADO CON EXITO</h1>;
+    return <div className="w-[100%] rounded-md bg-emerald-500 flex flex-wrap justify-center align-middle m-4 md:p-10 md:m-5 md:h-1/3"><h1 className="md:text-2xl my-1 p-2 text-lg text-center text-white">TU CORREO SE HA ENVIADO CON EXITO</h1>
+    <div className="w-[70%] flex justify-center align-middle border-2 rounded-lg my-4 md:p-3 md:my-2"><Image src={logoblanco} height={200} width={200}/></div></div>
+    
   }
   return (
     <Form

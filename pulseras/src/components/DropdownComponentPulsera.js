@@ -19,7 +19,7 @@ import {
     };
 
     return (
-      <Form.Group controlId="exampleForm.SelectCustom">
+      <Form.Group controlId="exampleForm.SelectCustom" className="w-[100%]">
         <Dropdown>
           <DropdownButton
             variant="success"
@@ -38,7 +38,7 @@ import {
         <FormControl
           type="text"
           placeholder="Modelo"
-          className="border-2 w-full p-2 mt-2"
+          className="border-2 w-[100%] p-2 mt-2"
           value={valuePulsera}
           defaultValue={valuePulsera}
           onChange={funcionCambio(valuePulsera)}

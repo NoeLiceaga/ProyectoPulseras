@@ -98,7 +98,7 @@ function page() {
           ))}
         </div>
       </div>
-      <div>
+      <div className="flex justify-center align-middle">
         <ContactForm />
       </div>
     </div>

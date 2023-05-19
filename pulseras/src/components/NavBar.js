@@ -11,7 +11,7 @@ export default function NavBar() {
       <div className="justify-between px-4 mx-auto lg:max-w-7xl sm:items-center sm:flex sm:px-8">
         <div>
           <div className="flex items-center justify-between py-3 sm:py-5 sm:block">
-            <a href="javascript:void(0)" className="">
+            <a href="/" className="">
               <Image
                 src={logo}
                 alt="logo"
@@ -66,10 +66,10 @@ export default function NavBar() {
           >
             <ul className=" items-center justify-center space-y-8 sm:flex sm:space-x-6 sm:space-y-0">
               <li className="font-thin text-base text-white hover:text-[#bb9bf0] md:text-white md:font-bold md:text-xl md:hover:text-black ">
-                <Link href={"/"}>Inicio</Link>
+                <Link href={"/"} className="text-white">Inicio</Link>
               </li>
               <li className="font-thin text-base text-white hover:text-[#bb9bf0] md:text-white md:font-bold md:text-xl md:hover:text-black">
-                <Link href={"/especial"}>Pedido Especial</Link>
+                <Link href={"/especial"}  className="text-white">Pedido Especial</Link>
               </li>
               <li className="font-thin text-base text-white hover:text-[#bb9bf0] md:text-white md:font-bold md:text-xl  md:hover:text-black">
                 <Link href={"/contacto"} className="text-white">

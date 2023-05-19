@@ -93,7 +93,7 @@ export const AccesoriosLista = ({ identificador, regresaValor }) => {
   return (
     <div className="w-[100%] flex flex-wrap justify-center align-middle font-bmw my-2">
       <div className="flex p-2 justify-evenly">
-        <h2 className="mx-4">Accesorio</h2>
+        <h5 className="mx-4">Accesorio</h5>
         {masAccesorio ? (
           <Image
             src={menos}
@@ -126,9 +126,9 @@ export const AccesoriosLista = ({ identificador, regresaValor }) => {
             onClick={() => handleDivClick(accesorio.nombre)}
           >
             <Image src={accesorio.icono} className="md:flex" alt="imagen" />
-            <h1 className="mx-2 w-[100%] text-center md:flex md:w-1/3">
+            <h5 className="mx-2 w-[100%] text-center md:flex md:w-1/3">
               {accesorio.nombre}
-            </h1>
+            </h5>
           </div>
         ))}
       </div>

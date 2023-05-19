@@ -57,7 +57,7 @@ export const ColorPaletteMenu = ({ identificador ,regresaValor}) => {
   return (
     <div className="w-[100%] flex flex-wrap justify-center align-middle font-bmw my-2">
       <div className="flex p-2 justify-evenly">
-        <h2 className="mx-4">Paleta de Colores</h2>
+        <h5 className="mx-4">Paleta de Colores</h5>
         {masColores ? (
           <Image
             src={menos}

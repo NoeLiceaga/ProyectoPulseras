@@ -35,6 +35,9 @@ export const Modelo = ({ pulsera, idA, idC }) => {
       <div className="w-[100%] text-center font-thin mx-6 my-6 md:hidden md:text-2xl">
         <p className="">{pulsera.descripcion}</p>
       </div>
+      <div className="w-[100%] text-center font-thin mx-6 my-6 md:hidden md:text-2xl">
+        <p className="font-extrabold text-2xl text-green-500">${pulsera.precio}</p>
+      </div>
       <div className="md:hidden">
         <div className="w-[100%]">
           <ColorPaletteMenu
@@ -71,6 +74,9 @@ export const Modelo = ({ pulsera, idA, idC }) => {
           <div className="w-[100%] text-center font-thin mx-6 my-6">
             <p className="md:text-2xl">{pulsera.descripcion}</p>
           </div>
+          <div className="w-[100%] text-center font-thin mx-6 my-6">
+            <p className="md:text-3xl font-extrabold text-green-500">${pulsera.precio}</p>
+          </div>
         </div>
         <div className="hidden md:flex md:flex-wrap md:py-16 w-1/3">
           <ColorPaletteMenu
@@ -86,7 +92,7 @@ export const Modelo = ({ pulsera, idA, idC }) => {
       <div className="w-[100%] flex justify-center align-middle text-white p-10 hidden md:flex ">
         <Link
           href={"/contacto"}
-          className="bg-pink-700 rounded-md px-6 p-3 w-[100%] animate-pulse text-center"
+          className="bg-pink-700 rounded-md px-6 p-3 w-[100%] animate-pulse text-center text-white"
         >
           <button className="">QUIERO UNO</button>
         </Link>
